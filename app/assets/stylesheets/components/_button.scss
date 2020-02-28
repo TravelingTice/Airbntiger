@@ -89,4 +89,16 @@ padding-left: 5px;
   }
 }
 
+#view-calendar-btn {
+  font-size: 0.8em;
+  position: absolute;
+  right: 20px;
+  top: 32px;
+  color: $ui-black;
+  transition: color 100ms ease-out;
+  &:hover {
+    color: $ui-orange;
+    text-decoration: none;
+  }
+}
 
