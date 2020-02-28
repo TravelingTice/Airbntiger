@@ -1,0 +1,12 @@
+<main class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="ui-card text-center mt-5 h-100 vh-75">
+        <h1>Please approve your payment of:</h1>
+        <h2 id="special-h2"class="mb-5"><strong><%= @price.to_i * @days.to_i %> Euros</strong></h2>
+        <%= link_to "Pay!", bookings_path, class: "ui-btn" %>
+      </div>
+    </div>
+  </div>
+</main>
+

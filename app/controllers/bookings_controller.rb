@@ -5,6 +5,11 @@ class BookingsController < ApplicationController
     @upcoming_bookings = @bookings.where('end_date > ?', Date.today)
   end
 
+  def payment
+    @price = params[:price]
+    @days = params[:days]
+  end
+
   def create
     # create new booking with permitted params
     # check if checkboxes are all ticked (&&)
@@ -23,7 +28,7 @@ class BookingsController < ApplicationController
       @booking.end_date = Date.parse("#{e_day}/#{e_month}/#{e_year}")
 
       if @booking.save
-        redirect_to bookings_path
+        redirect_to payment_path(price: @pet.price_in_eur, days: (@booking.end_date - @booking.start_date).to_i)
       else
         redirect_to pet_path(@pet, success: false, messages: @pet.errors.full_messages)
       end

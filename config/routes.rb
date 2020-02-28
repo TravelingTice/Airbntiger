@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   }
   root to: 'pages#home'
 
+  get 'bookings/payment', to: 'bookings#payment', as: :payment
+
+
   namespace :admin do
     resources :pets, only: :index
   end
