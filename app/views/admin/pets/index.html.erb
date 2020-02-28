@@ -2,7 +2,7 @@
   <% if @pets.empty? %>
   <div style="opacity: 0.6">
     <h1>You have no pets :(</h1>
-    <%= link_to "Create your pet here!", new_pet_path %>
+    <%= link_to "Create your pet here!", new_pet_path, class: 'new-pet-link' %>
   </div>
   <% else %>
     <h1>My pets:</h1>
