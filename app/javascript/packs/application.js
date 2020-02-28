@@ -8,6 +8,7 @@ import { initEventListenerOnLandingPage } from '../homepage/submit_event';
 import { initCalendar } from '../show_pet/initCalendar';
 import { injectInitialDatesInForm } from '../show_pet/getDates';
 import { calculateCost } from '../show_pet/calculateCost';
+import { toggleCalendar } from '../show_pet/toggleCalendar';
 
 if (window.location.pathname === '/users/sign_up') {
   initAvatarUploadBtn();
@@ -26,3 +27,4 @@ injectInitialDatesInForm();
 initEventListenerOnLandingPage();
 initCalendar();
 calculateCost();
+toggleCalendar();

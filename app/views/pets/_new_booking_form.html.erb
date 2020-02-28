@@ -1,6 +1,10 @@
   <div class="col-12 col-md-6 booking-card ui-card">
+      <%# show view calendar button %>
+      <% if pet.user != current_user %>
+        <button id="view-calendar-btn" class="btn btn-link">View calendar</button>
+      <% end %>
       <%# If the current user is the owner of the pet, show the calendar %>
-      <div class="<%= current_user == pet.user ? '' : 'none' %>">
+      <div id="calendar-container" class="<%= current_user == pet.user ? '' : 'none' %>">
         <div id="calendar" data-dates="<%= pet.occupied_dates %>">
         </div>
         <%# Display the calendar here! %>
@@ -10,10 +14,6 @@
         </div>
       </div>
 
-      <%# show view calendar button %>
-      <% if pet.user != current_user %>
-        <button id="view-calendar-btn" class="btn btn-link">View calendar</button>
-      <% end %>
       <%# Display the form to create a booking %>
       <%= simple_form_for([pet, booking]) do |f| %>
       <div class="total-cost">
